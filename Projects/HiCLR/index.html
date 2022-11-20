@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>S5Mars</title>
+    <style type="text/css">
+        body{
+        	background-color: white;
+        }
+        .links{
+        	text-decoration: none;
+        	color: #0066CC;
+        }
+        .p2{
+        	padding-top: 20px;
+        	font-size: 25px;
+        }
+        .p1{
+        	text-align:justify;
+        	text-justify:inter-ideograph;
+        }
+		
+		.left {
+			text-align: left;
+			border: 1px dotted black;
+			width: 50%;
+		}
+        a{
+        	font-family: Sans-serif;
+        }
+        p{
+        	font-family: Sans-serif;
+        }
+        ul{
+        	font-family: Sans-serif;
+        }
+    </style>
+</head>
+<body>
+	<div align="center" style="padding-top: 30px;">
+	<p style="font-size:35px;">Hierarchical Consistent Contrastive Learning for Skeleton-Based <br>
+        Action Recognition with Growing Augmentations </p>
+
+	<a href="mailto:zjh2020@pku.edu.cn" class="links">Jiahang Zhang *</a> &nbsp; &nbsp; 
+	<a href="mailto:linlilang@pku.edu.cn" class="links">Lilang Lin *</a> &nbsp; &nbsp; 
+	<a href="mailto:liujiaying@pku.edu.cn" class="links">Jiaying Liu</a>
+
+	<br>
+	<p class="para-3"><span class="font-5">* indicates equal contributions.</span></p>
+	<p class="para-3"><span class="p1"> Wangxuan Institute of Computer Technology, Peking University, Beijing.</span></p>
+	
+
+	</div>
+
+        <div align="left" style="padding-left: 15%; padding-right: 15%; padding-bottom: 30px;">
+		<p class='p2'> Abstract </p> 
+		<p class='p1'>Contrastive learning has been proven beneficial for self-supervised skeleton-based action recognition. Most contrastive learning methods utilize carefully designed augmentations to generate different movement patterns of skeletons for the same semantics. However, it is still a pending issue to apply strong augmentations, which distort the images/skeletons’ structures and cause semantic loss, due to their resulting unstable training. In this paper, we investigate the potential of adopting strong augmentations and propose a general hierarchical consistent contrastive learning framework (HiCLR) for skeleton-based action recognition. Specifically, we first design a gradual growing augmentation policy to generate multiple ordered positive pairs, which guide to achieve the consistency of the learned representation from different views. Then, an asymmetric loss is proposed to enforce the hierarchical consistency via a directional clustering operation in the feature space, pulling the representations from strongly augmented views closer to those from weakly augmented views for better generalizability. Meanwhile, we propose and evaluate three kinds of strong augmentations for 3D skeletons to demonstrate the effectiveness of our method. Extensive experiments show that HiCLR outperforms the state-of-the-art methods notably on three large-scale datasets, i.e., NTU60, NTU120, and PKUMMD.</p>
+            </div>
+
+        <div align="left" style="padding-left: 15%; padding-right: 15%; padding-bottom: 30px;">
+            <p class='p2'> Method </p> 
+            <div style="padding-left: 5%; padding-right: 5%;">
+                <div align="center">
+                    <img src="img/arch.jpg" width="100%"> <br>
+                </div>
+            <p class='p1'>Figure 1. The overview architecture of the proposed <strong>HiCLR</strong>. There are <em>k</em> branches sharing the same query encoder weights corresponding to the hierarchical learning of different augmentations. We employ a growing augmentation strategy to generate multiple highly correlated positive pairs corresponding to different augmented strengths. The augmented view v<sub>i</sub> is fed into the query encoder f<sub>θ<sub>q</sub></sub> and the embedding projector h<sub>θ<sub>q</sub></sub> to obtain zi. Similarly, z′<sub>0</sub> is obtained by the key encoder f<sub>θ<sub>k</sub></sub> and the embedding projector h<sub>θ<sub>k</sub></sub>. Meanwhile, a hierarchical self-supervised loss is proposed to align the feature distributions of adjacent branches, which is optimized jointly with the InfoNCE loss.</p>
+
+            </div>
+        
+            <p class='p2'> Results </p> 
+            <div style="padding-left: 5%; padding-right: 5%;">
+                <div align="center">
+                    <img src="img/result.jpg" width="100%"> <br>
+                </div>
+            <p class='p1'>Figure 2. Linear evaluation results on NTU60 and NTU120 datasets.</p>
+
+
+        <p class='p2'> Resources </p> 
+		<p class='p1'>
+			<ul style="line-height:15px">
+			　　<li> Paper: <a href="https://arxiv.org/abs/2207.01200" class="links">arXiv</a> </li>
+			　　<!--<li> Supplementary: <a href="https://drive.google.com/open?id=1QDMWbhw2jgutDsLaS00R-P6cxZ_OaZis" class="links">Google Drive</a>, <a href="https://pan.baidu.com/s/1ke9hqo62pVhl6_6YqAA4cQ" class="links">Baidu Pan</a> (Code: wvr6) </li>-->
+
+			　　<li> Dataset can be downloaded here: <a href="https://drive.google.com/file/d/16dUZOh_-hv05wBaZ_BRH_A2_IwTgcN0J/view?usp=sharing" class="links">Google Drive</a>, <a href="https://pan.baidu.com/s/1RkxqFpTdI9eKfrFSJ_UXAw" class="links">Baidu Pan</a> (Code: dzdb) </li>
+			</ul>
+		</p>
+
+		<p class='p2'> Citation</p>
+		<p> 
+			@article{zhang2022s, <br>
+				&nbsp; &nbsp; title={S^5Mars: Self-Supervised and Semi-Supervised Learning for Mars Segmentation},<br>
+				&nbsp; &nbsp; author={Zhang, Jiahang and Lin, Lilang and Fan, Zejia and Wang, Wenjing and Liu, Jiaying},<br>
+				&nbsp; &nbsp; journal={arXiv preprint arXiv:2207.01200},<br>
+				&nbsp; &nbsp; year={2022}, <br>
+			  }
+
+		</p>
+
+        <p class='p2'> Citation</p>
+		<p> 
+			@article{zhang2022s, <br>
+				&nbsp; &nbsp; title={S^5Mars: Self-Supervised and Semi-Supervised Learning for Mars Segmentation},<br>
+				&nbsp; &nbsp; author={Zhang, Jiahang and Lin, Lilang and Fan, Zejia and Wang, Wenjing and Liu, Jiaying},<br>
+				&nbsp; &nbsp; journal={arXiv preprint arXiv:2207.01200},<br>
+				&nbsp; &nbsp; year={2022}, <br>
+			  }
+
+		</p>
+		
+		<p class='left'>
+			<ul style="line-height:15px">
+				Return to the <a href="http://39.96.165.147/" class="links">home page:</a>
+			</ul>
+		</p>
+		
+
+</html>
