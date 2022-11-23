@@ -62,7 +62,7 @@
                 <div align="center">
                     <img src="img/arch.jpg" width="100%"> <br>
                 </div>
-            <p class='p1'>Figure 1. The overview architecture of the proposed <strong>HiCLR</strong>. There are <em>k</em> branches sharing the same query encoder weights corresponding to the hierarchical learning of different augmentations. We employ a growing augmentation strategy to generate multiple highly correlated positive pairs corresponding to different augmented strengths. The augmented view v<sub>i</sub> is fed into the query encoder f<sub>θ<sub>q</sub></sub> and the embedding projector h<sub>θ<sub>q</sub></sub> to obtain zi. Similarly, z′<sub>0</sub> is obtained by the key encoder f<sub>θ<sub>k</sub></sub> and the embedding projector h<sub>θ<sub>k</sub></sub>. Meanwhile, a hierarchical self-supervised loss is proposed to align the feature distributions of adjacent branches, which is optimized jointly with the InfoNCE loss.</p>
+            <p style="line-height:150%">Figure 1. The overview architecture of the proposed <strong>HiCLR</strong>. There are <em>k</em> branches sharing the same query encoder weights corresponding to the hierarchical learning of different augmentations. We employ a growing augmentation strategy to generate multiple highly correlated positive pairs corresponding to different augmented strengths. The augmented view v<sub>i</sub> is fed into the query encoder and the embedding projector to obtain the corresponding feature representation. Similarly, the feature representation of basically augmented sample is obtained by the key encoder and the embedding projector. Meanwhile, a hierarchical self-supervised loss is proposed to align the feature distributions of adjacent branches, which is optimized jointly with the InfoNCE loss.</p>
 
             </div>
         
@@ -72,6 +72,12 @@
                     <img src="img/result.jpg" width="100%"> <br>
                 </div>
             <p class='p1'>Figure 2. Linear evaluation results on NTU60 and NTU120 datasets.</p>
+
+			<div style="padding-left: 5%; padding-right: 5%;">
+                <div align="center">
+                    <img src="img/sup_result.jpg" width="50%"> <br>
+                </div>
+            <p class='p1'>Figure 2. Supervised evaluation results on NTU60 and NTU120 datasets.</p>
 
 
         <p class='p2'> Resources </p> 
@@ -93,12 +99,14 @@
 		<p> 
 			[1] Liu, J.; Song, S.; Liu, C.; Li, Y.; and Hu, Y. 2020. A benchmark dataset and comparison study for multi-modal human action analytics. <i>TOMM</i>, 16(2): 1–24. <br> <br>
 			[2] Shahroudy, A.; Liu, J.; Ng, T.-T.; and Wang, G. 2016. Ntu rgb+ d: A large scale dataset for 3d human activity analysis. In <i>IEEE CVPR</i>, 1010–1019. <br> <br>
-			[3] Liu, J.; Shahroudy, A.; Perez, M.; Wang, G.; Duan, L.-Y.; and Kot, A. C. 2019. NTU RGB + D 120: A large-scale benchmark for 3D human activity understanding. <i>IEEE TPAMI</i>, 42(10): 2684–2701.
+			[3] Liu, J.; Shahroudy, A.; Perez, M.; Wang, G.; Duan, L.-Y.; and Kot, A. C. 2019. NTU RGB + D 120: A large-scale benchmark for 3D human activity understanding. <i>IEEE TPAMI</i>, 42(10): 2684–2701. <br> <br>
+			[4] Guo, T.; Liu, H.; Chen, Z.; Liu, M.; Wang, T.; and Ding, R. 2022. Contrastive Learning from Extremely Augmented Skeleton Sequences for Self-supervised Action Recognition. In <i>AAAI</i>. <br> <br>
+			[5] Lin, L.; Song, S.; Yang, W.; and Liu, J. 2020. Ms2l: Multi-task self-supervised learning for skeleton based action recognition. In <i>ACM MM</i>, 2490–2498.
 		</p>
 		
 		<p class='left'>
 			<ul style="line-height:15px">
-				Return to the <a href="http://39.96.165.147/" class="links">home page</a>
+				Return to the <a href="http://39.96.165.147/Projects.html" class="links">STRUCT Project</a>
 			</ul>
 		</p>
 		
