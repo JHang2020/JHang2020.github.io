@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <title>PCM3 (ACM MM-23)</title>
+    <meta name="description" content="Lithium Description" />
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <link href="css/plugins.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="css/application.css" media="screen" rel="stylesheet" type="text/css" />
+  </head>
+
+<body>
+
+    <!-- ABOUT -->
+
+    <section id="page-about" class="section">
+      <div align="center" style="padding-bottom: 100px;">
+        <p class="copy-02">IJCAI 2024</p>
+        <p class="heading h-01">Shap-Mix: Shapley Value Guided Mixing for Long-Tailed<br>Skeleton Based Action Recognition</p>
+
+        <p class="copy-02">
+            <a href="mailto:zjh2020@pku.edu.cn" class="links">Jiahang Zhang </a> &nbsp; &nbsp; 
+            <a href="mailto:linlilang@pku.edu.cn" class="links">Lilang Lin </a> &nbsp; &nbsp; 
+            <a href="mailto:liujiaying@pku.edu.cn" class="links">Jiaying Liu</a>
+        </p>
+      </div>
+
+      <div class="site-inner">
+        <div align="center" style="padding-top:20px;padding-bottom:10px">
+        <img src="img\acc.png" width=80%> <br>
+        </div>
+        <h3 class="heading h-03">Abstract</h3>
+            <p class="copy-02", style="text-align:justify; text-justify:inter-ideograph;">
+              In real-world scenarios, human actions often fall into a <b>long-tailed distribution</b>. It makes the existing skeleton-based action recognition works, which are mostly designed based on balanced datasets, suffer from a sharp performance degradation. Recently, many efforts have been made to image/video long-tailed learning. However, directly applying them to skeleton data can be sub-optimal due to the lack of consideration of the crucial spatial-temporal motion patterns, especially for some modality-specific methodologies such as data augmentation. To this end, considering the crucial role of the body parts in the spatially concentrated human actions, we attend to the mixing augmentations and propose a novel method, <i>Shap-Mix</i>, which improves long-tailed learning by mining representative motion patterns for tail categories. Specifically, we first develop an effective spatial-temporal mixing strategy for the skeleton to boost representation quality. Then, the employed saliency guidance method is presented, consisting of the saliency estimation based on Shapley value and a tail-aware mixing policy. It preserves the salient motion parts of minority classes in mixed data, explicitly establishing the relationships between crucial body structure cues and high-level semantics. Extensive experiments on three large-scale skeleton datasets show our remarkable performance improvement under \textit{both long-tailed and balanced} settings.</p>
+      </div>
+
+      <br>
+
+      <div class="site-inner">
+        <h3 class="heading h-03">Key Idea</h3>
+            <p class="copy-02", style="text-align:justify; text-justify:inter-ideograph;">(1) <b> Part Saliency Estimation Based on Shapley-Value.</b> obtain the saliency map of the skeleton joints first relying on the Shapley-Value in the cooperative game theory.
+                <br>
+            (2) <b> Tail-Aware Mixing Synthesis.</b> Based on the obtained saliency map, we guide the synthesis of more representative mixed samples for the boundary learning of tail categories.</p>
+
+        <div align="center" style="padding-top:20px;padding-bottom:10px">
+          <img src="img\pipeline.png" width=70%> <br>
+        <p class='copy-02', style="text-align:justify; text-justify:inter-ideograph;">Figure 1. A simplified illustration of Shap-Mix. We first perform the online saliency estimation using Shapley-Value. For dotted joints, we use the mean of the dataset as the static sequence. The calculated Shapley value is used to update the Shapley value list v<sup>c</sup> by EMA. Finally, the mixed data is generated, preserving the representative motion patterns of the minority class (<i>wave</i> in this example).
+        </p>
+        </div>
+      </div>
+
+      <div class="site-inner" style="padding-top: 20px;">
+        <h3 class="heading h-03">Selected Experimental Results</h3>
+
+        <div align="center" style="padding-top:20px;padding-bottom:10px">
+            <img src="img/main_res.png" width="90%"> <br>
+        <p class='copy-02'>Table 1. Performance comparison of long-tailed skeleton-based action recognition with single joint stream. IF is the imbalance factor. Top-1 accuracy (%) is reported. The results with bold and underline indicate the highest and second-highest value.
+        </div>
+
+        <div align="center" style="padding-top:20px;padding-bottom:10px">
+            <img src="img/k400.png" width="50%"> <br>
+        <p class='copy-02'>Table 2. Comparison results on Kinetics 400 of single joint stream.
+        </p>
+        </div>
+
+        <div align="center" style="padding-top:20px;padding-bottom:10px">
+            <img src="img/balance_res.png" width="50%"> <br>
+            <p class='copy-02'>Table 3. Performance comparison of balanced recognition on NTU
+              datasets in top-1 accuracy. *s- means the fusion results of * streams.
+            </p>
+        </div>
+      
+      <div align="center" style="padding-top:20px;padding-bottom:10px">
+          <img src="img/salience_res.png" width="90%"> <br>
+          <p class='copy-02'>Table 3.Visualization results of the Shapley value guided saliency estimation on LT-NTU 60 dataset. The first, second, and the third rows
+            are the actions from many-, medium-, few-shot classes, respectively, where the top 5 most salient parts are given. Note that the Shapley value
+            is normalized and the average saliency is 0.05
+          </p>
+      </div>
+      </div>
+
+      <div class="site-inner" style="padding-top:50px;">
+        <p class="heading h-03"> Resources </p> (Comming Soon!)
+          <ul style="line-height:1.5; padding-left: 50px; padding-right: 50px">
+             <li class="copy-02"> Paper: <a href="https://arxiv.org/abs/2308.03975">arXiv</a> </li>
+             <li class="copy-02"> Code: <a href="https://github.com/JHang2020/PCM3">GitHub</a></li>
+          </ul>
+      </div>
+      
+
+      <div class="site-inner" style="padding-top:50px;">
+        <p class='heading h-03'> Citation</p>
+        <p class="copy-02"> @InProceedings{Shap_Zhang24, <br>
+        &nbsp; &nbsp; author = {Zhang, Jiahang and Lin, Lilang and Liu, Jiaying}, <br>
+        &nbsp; &nbsp; title = {Shap-Mix: Shapley Value Guided Mixing for Long-Tailed Skeleton Based Action Recognition}, <br>
+        &nbsp; &nbsp; booktitle = {International Joint Conference on Artificial Intelligence (IJCAI)}, <br>
+        &nbsp; &nbsp; year = {2024} <br>
+        } <br> 
+        </p>
+      </div>
+	
+    <div class="site-inner" style="padding-top:20px;">
+    <p class="copy-02">
+        <hr />
+		<ul>
+			Return to the <a href="http://39.96.165.147/Projects.html" class="links">STRUCT Project</a>
+		</ul>
+	</p>
+    </div>
+
+    <section id="page-about" class="section">
+
+</body>
+</html>
