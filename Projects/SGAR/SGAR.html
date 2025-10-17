@@ -2,560 +2,395 @@
 <html lang="en">
 
 <head>
-     
-    <meta charset="utf-8">
-     
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-     
-      <!-- Primary Meta Tags -->
-      <!-- TODO: Replace with your paper title and author names -->
-     
-    <meta name="title" content="SGAR: Structural Generative Augmentation for 3D Human Motion Retrieval">
-      <!-- TODO: Write a compelling 150-160 character description of your research -->
-     
-    <meta name="description"
-        content="A novel framework, Structural Generative Augmentation for 3D Human Motion Retrieval, to enable generation-augmented retrieval">
-      <!-- TODO: Add 5-10 relevant keywords for your research area -->
-     
-    <meta name="keywords"
-        content="human motion understanding, action recognition, action retrieval, motion-text retrieval, motion-language model, cross-modal learning">
-      <!-- TODO: List all authors -->
-     
-    <meta name="author" content="Jiahang Zhang, Lilang Lin, Shuai Yang, Jiaying Liu">
-     
-    <meta name="robots" content="index, follow">
-     
-    <meta name="language" content="English">
-     
-      <!-- Open Graph / Facebook -->
-     
-    <meta property="og:type" content="article">
-      <!-- TODO: Replace with your institution or lab name -->
-     
-    <meta property="og:site_name" content="INSTITUTION_OR_LAB_NAME">
-      <!-- TODO: Same as paper title above -->
-     
-    <meta property="og:title" content="PAPER_TITLE">
-      <!-- TODO: Same as description above -->
-     
-    <meta property="og:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-      <!-- TODO: Replace with your actual website URL -->
-     
-    <meta property="og:url" content="https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE">
-      <!-- TODO: Create a 1200x630px preview image and update path -->
-     
-    <meta property="og:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
-     
-    <meta property="og:image:width" content="1200">
-     
-    <meta property="og:image:height" content="630">
-     
-    <meta property="og:image:alt" content="PAPER_TITLE - Research Preview">
-     
-    <meta property="article:published_time" content="2024-01-01T00:00:00.000Z">
-     
-    <meta property="article:author" content="FIRST_AUTHOR_NAME">
-     
-    <meta property="article:section" content="Research">
-     
-    <meta property="article:tag" content="KEYWORD1">
-     
-    <meta property="article:tag" content="KEYWORD2">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Twitter -->
-     
-    <meta name="twitter:card" content="summary_large_image">
-      <!-- TODO: Replace with your lab/institution Twitter handle -->
-     
-    <meta name="twitter:site" content="@YOUR_TWITTER_HANDLE">
-      <!-- TODO: Replace with first author's Twitter handle -->
-     
-    <meta name="twitter:creator" content="@AUTHOR_TWITTER_HANDLE">
-      <!-- TODO: Same as paper title above -->
-     
-    <meta name="twitter:title" content="PAPER_TITLE">
-      <!-- TODO: Same as description above -->
-     
-    <meta name="twitter:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-      <!-- TODO: Same as social preview image above -->
-     
-    <meta name="twitter:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
-     
-    <meta name="twitter:image:alt" content="SGAR - Research Preview">
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="SGAR: Structural Generative Augmentation for 3D Human Motion Retrieval">
+  <meta name="description"
+    content="A novel framework, Structural Generative Augmentation for 3D Human Motion Retrieval, to enable generation-augmented retrieval.">
+  <meta name="keywords"
+    content="human motion understanding, action recognition, action retrieval, motion-text retrieval, motion-language model, cross-modal learning">
+  <meta name="author" content="Jiahang Zhang, Lilang Lin, Shuai Yang, Jiaying Liu">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
 
-      <!-- Academic/Research Specific -->
-     
-    <meta name="citation_title" content="SGAR">
-     
-    <meta name="citation_author" content="FIRST_AUTHOR_LAST, FIRST_AUTHOR_FIRST">
-     
-    <meta name="citation_author" content="SECOND_AUTHOR_LAST, SECOND_AUTHOR_FIRST">
-     
-    <meta name="citation_publication_date" content="2024">
-     
-    <meta name="citation_conference_title" content="CONFERENCE_NAME">
-     
-    <meta name="citation_pdf_url" content="https://YOUR_DOMAIN.com/static/pdfs/paper.pdf">
-     
-      <!-- Additional SEO -->
-     
-    <meta name="theme-color" content="#2563eb">
-     
-    <meta name="msapplication-TileColor" content="#2563eb">
-     
-    <meta name="apple-mobile-web-app-capable" content="yes">
-     
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-     
-      <!-- Preconnect for performance -->
-     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-     
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-     
-    <link rel="preconnect" href="https://ajax.googleapis.com">
-     
-    <link rel="preconnect" href="https://documentcloud.adobe.com">
-     
-    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Peking University - STRUCT Group">
+  <meta property="og:title" content="SGAR: Structural Generative Augmentation for 3D Human Motion Retrieval">
+  <meta property="og:description"
+    content="A novel framework, Structural Generative Augmentation for 3D Human Motion Retrieval, to enable generation-augmented retrieval.">
+  <meta property="og:url" content="https://jhang2020.github.io/Projects/SGAR/">
+  <meta property="og:image" content="https://jhang2020.github.io/Projects/SGAR/static/images/social_preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="SGAR - Research Preview">
+  <meta property="article:published_time" content="2024-01-01T00:00:00.000Z">
+  <meta property="article:author" content="Jiahang Zhang">
+  <meta property="article:section" content="Research">
+  <meta property="article:tag" content="human motion understanding">
+  <meta property="article:tag" content="cross-modal retrieval">
 
-      <!-- TODO: Replace with your paper title and authors -->
-      <title>SGAR - NeurIPS25 | Academic Research</title>
-     
-      <!-- Favicon and App Icons -->
-     
-    <link rel="icon" type="image/x-icon" href="static/images/s.jpg">
-     
-    <link rel="apple-touch-icon" href="static/images/favicon.ico">
-     
-      <!-- Critical CSS - Load synchronously -->
-     
-    <link rel="stylesheet" href="static/css/bulma.min.css">
-     
-    <link rel="stylesheet" href="static/css/index.css">
-     
-      <!-- Non-critical CSS - Load asynchronously -->
-     
-    <link rel="preload" href="static/css/bulma-carousel.min.css" as="style"
-        onload="this.onload=null;this.rel='stylesheet'">
-     
-    <link rel="preload" href="static/css/bulma-slider.min.css" as="style"
-        onload="this.onload=null;this.rel='stylesheet'">
-     
-    <link rel="preload" href="static/css/fontawesome.all.min.css" as="style"
-        onload="this.onload=null;this.rel='stylesheet'">
-     
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style"
-        onload="this.onload=null;this.rel='stylesheet'">
-     
-      <!-- Fallback for browsers that don't support preload -->
-      <noscript>
-           
-        <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
-           
-        <link rel="stylesheet" href="static/css/bulma-slider.min.css">
-           
-        <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
-           
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-         
-    </noscript>
-     
-      <!-- Fonts - Optimized loading -->
-     
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-     
-      <!-- Defer non-critical JavaScript -->
-     
-    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-     
-    <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
-     
-    <script defer src="static/js/fontawesome.all.min.js"></script>
-     
-    <script defer src="static/js/bulma-carousel.min.js"></script>
-     
-    <script defer src="static/js/bulma-slider.min.js"></script>
-     
-    <script defer src="static/js/index.js"></script>
-     
-      <!-- Structured Data for Academic Papers -->
-     
-    <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ScholarlyArticle",
-    "headline": "SGAR",
-    "description": "BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS",
-    "author": [
-      {
-        "@type": "Person",
-        "name": "FIRST_AUTHOR_NAME",
-        "affiliation": {
-          "@type": "Organization",
-          "name": "INSTITUTION_NAME"
-        }
-      },
-      {
-        "@type": "Person",
-        "name": "SECOND_AUTHOR_NAME",
-        "affiliation": {
-          "@type": "Organization",
-          "name": "INSTITUTION_NAME"
-        }
-      }
-    ],
-    "datePublished": "2024-01-01",
-    "publisher": {
-      "@type": "Organization",
-      "name": "CONFERENCE_OR_JOURNAL_NAME"
-    },
-    "url": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE",
-    "image": "https://YOUR_DOMAIN.com/static/images/social_preview.png",
-    "keywords": ["KEYWORD1", "KEYWORD2", "KEYWORD3", "machine learning", "computer vision"],
-    "abstract": "FULL_ABSTRACT_TEXT_HERE",
-    "citation": "BIBTEX_CITATION_HERE",
-    "isAccessibleForFree": true,
-    "license": "https://creativecommons.org/licenses/by/4.0/",
-    "mainEntity": {
-      "@type": "WebPage",
-      "@id": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE"
-    },
-    "about": [
-      {
-        "@type": "Thing",
-        "name": "RESEARCH_AREA_1"
-      },
-      {
-        "@type": "Thing", 
-        "name": "RESEARCH_AREA_2"
-      }
-    ]
-  }
-  </script>
-     
-      <!-- Website/Organization Structured Data -->
-     
-    <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "INSTITUTION_OR_LAB_NAME",
-    "url": "https://YOUR_INSTITUTION_WEBSITE.com",
-    "logo": "https://YOUR_DOMAIN.com/static/images/favicon.ico",
-    "sameAs": [
-      "https://twitter.com/YOUR_TWITTER_HANDLE",
-      "https://github.com/YOUR_GITHUB_USERNAME"
-    ]
-  }
-  </script>
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@YourLabTwitter">
+  <meta name="twitter:creator" content="@JiahangZhang">
+  <meta name="twitter:title" content="SGAR: Structural Generative Augmentation for 3D Human Motion Retrieval">
+  <meta name="twitter:description"
+    content="A novel framework, Structural Generative Augmentation for 3D Human Motion Retrieval, to enable generation-augmented retrieval.">
+  <meta name="twitter:image" content="https://jhang2020.github.io/Projects/SGAR/static/images/social_preview.png">
+  <meta name="twitter:image:alt" content="SGAR - Research Preview">
+
+  <!-- Academic/Research Specific -->
+  <meta name="citation_title" content="SGAR: Structural Generative Augmentation for 3D Human Motion Retrieval">
+  <meta name="citation_author" content="Zhang, Jiahang">
+  <meta name="citation_author" content="Lin, Lilang">
+  <meta name="citation_author" content="Yang, Shuai">
+  <meta name="citation_author" content="Liu, Jiaying">
+  <meta name="citation_publication_date" content="2025">
+  <meta name="citation_conference_title" content="NeurIPS">
+  <meta name="citation_pdf_url" content="https://jhang2020.github.io/Projects/SGAR/static/pdfs/paper.pdf">
+
+  <!-- Additional SEO -->
+  <meta name="theme-color" content="#2563eb">
+  <meta name="msapplication-TileColor" content="#2563eb">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://ajax.googleapis.com">
+  <link rel="preconnect" href="https://documentcloud.adobe.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+  <title>SGAR - NeurIPS 2025 | Academic Research</title>
+
+  <!-- Favicon and App Icons -->
+  <link rel="icon" type="image/x-icon" href="static/images/s.jpg">
+  <link rel="apple-touch-icon" href="static/images/favicon.ico">
+
+  <!-- Critical CSS - Load synchronously -->
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <!-- Non-critical CSS - Load asynchronously -->
+  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style"
+    onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style"
+    onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style"
+    onload="this.onload=null;this.rel='stylesheet'">
+
+  <!-- Fallback for browsers that don't support preload -->
+  <noscript>
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  </noscript>
+
+  <!-- Fonts - Optimized loading -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Defer non-critical JavaScript -->
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script defer src="static/js/bulma-carousel.min.js"></script>
+  <script defer src="static/js/bulma-slider.min.js"></script>
+  <script defer src="static/js/index.js"></script>
+
+  <!-- Structured Data for Academic Papers -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "SGAR: Structural Generative Augmentation for 3D Human Motion Retrieval",
+    "description": "A novel framework, Structural Generative Augmentation for 3D Human Motion Retrieval, to enable generation-augmented retrieval.",
+    "author": [
+      {
+        "@type": "Person",
+        "name": "Jiahang Zhang",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Peking University"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Lilang Lin",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Peking University"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Shuai Yang",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Peking University"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Jiaying Liu",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Peking University"
+        }
+      }
+    ],
+    "datePublished": "2024-01-01",
+    "publisher": {
+      "@type": "Organization",
+      "name": "NeurIPS"
+    },
+    "url": "https://jhang2020.github.io/Projects/SGAR/",
+    "image": "https://jhang2020.github.io/Projects/SGAR/static/images/social_preview.png",
+    "keywords": ["human motion understanding", "action retrieval", "cross-modal learning", "motion-text retrieval", "generative augmentation"],
+    "abstract": "In this paper, we study an explicit fine-grained concept decomposition for alignment learning and present a novel framework, Structural Generative Augmentation for 3D Human Motion Retrieval (SGAR), to enable generation-augmented retrieval. Extensive experiments on three benchmarks, including motion-text retrieval as well as recognition and generation applications, demonstrate the superior performance and promising transferability.",
+    "citation": "zhangsgar2024",
+    "isAccessibleForFree": true,
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "mainEntity": {
+      "@type": "WebPage",
+      "@id": "https://jhang2020.github.io/Projects/SGAR/"
+    },
+    "about": [
+      { "@type": "Thing", "name": "Computer Vision" },
+      { "@type": "Thing", "name": "Natural Language Processing" }
+    ]
+  }
+  </script>
+
+  <!-- Website/Organization Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "STRUCT Group, Peking University",
+    "url": "http://39.96.165.147/struct.html",
+    "logo": "https://jhang2020.github.io/Projects/SGAR/static/images/favicon.ico",
+    "sameAs": [
+      "https://twitter.com/YourLabTwitter",
+      "https://github.com/YourGitHubOrg"
+    ]
+  }
+  </script>
 </head>
 
 <body>
 
-      <!-- Scroll to Top Button -->
-      <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
-            <i class="fas fa-chevron-up"></i>
-          </button>
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
 
-      <!-- More Works Dropdown -->
-      <div class="more-works-container">
-            <button class="more-works-btn" onclick="toggleMoreWorks()" title="View More Works from Our Lab">
-                  <i class="fas fa-flask"></i>
-                  More Works
-                  <i class="fas fa-chevron-down dropdown-arrow"></i>
-                </button>
-            <div class="more-works-dropdown" id="moreWorksDropdown">
-                  <div class="dropdown-header">
-                        <h4>More Works</h4>
-                        <button class="close-btn" onclick="toggleMoreWorks()">
-                              <i class="fas fa-times"></i>
-                            </button>
-                      </div>
-                  <div class="works-list">
-                        <!-- TODO: Replace with your lab's related works -->
-                        <a href="https://jhang2020.github.io/Projects/Shap-Mix/Shap-Mix.html" class="work-item"
-                    target="_blank">
-                              <div class="work-info">
-                                    <!-- TODO: Replace with actual paper title -->
-                                    <h5>Shap-Mix: Shapley Value Guided Mixing for Long-Tailed Skeleton Based Action
-                            Recognition</h5>
-                                    <!-- TODO: Replace with brief description -->
-                                    <p>Long-Tailed Skeleton-based Action Recognition.</p>
-                                    <!-- TODO: Replace with venue and year -->
-                                    <span class="work-venue">IJCAI 2024</span>
-                                  </div>
-                              <i class="fas fa-external-link-alt"></i>
-                            </a>
-                        <!-- TODO: Add more related works or remove extra items -->
-                        <a href="https://jhang2020.github.io/Projects/PCM3/PCM3.html" class="work-item" target="_blank">
-                              <div class="work-info">
-                                    <h5>Prompted Contrast with Masked Motion Modeling: Towards Versatile 3D Action
-                            Representation Learning
-                        </h5>
-                                    <p>Self-Supervised Skeleton-based Action Representation Learning.</p>
-                                    <span class="work-venue">ACM MM 2023</span>
-                                  </div>
-                              <i class="fas fa-external-link-alt"></i>
-                            </a>
-                        <a href="https://jhang2020.github.io/Projects/HiCLR/HiCLR.html" class="work-item"
-                    target="_blank">
-                              <div class="work-info">
-                                    <h5>Hierarchical Consistent Contrastive Learning for Skeleton-Based Action
-                            Recognition with Growing Augmentations
-                        </h5>
-                                    <p>Self-Supervised Skeleton-based Action Recognition.</p>
-                                    <span class="work-venue">AAAI 2023</span>
-                                  </div>
-                              <i class="fas fa-external-link-alt"></i>
-                            </a>
-                      </div>
-                </div>
-          </div>
+  <!-- More Works Dropdown -->
+  <div class="more-works-container">
+    <button class="more-works-btn" onclick="toggleMoreWorks()" title="View More Works from Our Lab">
+      <i class="fas fa-flask"></i>
+      More Works
+      <i class="fas fa-chevron-down dropdown-arrow"></i>
+    </button>
+    <div class="more-works-dropdown" id="moreWorksDropdown">
+      <div class="dropdown-header">
+        <h4>More Works</h4>
+        <button class="close-btn" onclick="toggleMoreWorks()">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="works-list">
+        <a href="https://jhang2020.github.io/Projects/Shap-Mix/Shap-Mix.html" class="work-item" target="_blank">
+          <div class="work-info">
+            <h5>Shap-Mix: Shapley Value Guided Mixing for Long-Tailed Skeleton Based Action Recognition</h5>
+            <p>Long-Tailed Skeleton-based Action Recognition.</p>
+            <span class="work-venue">IJCAI 2024</span>
+          </div>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+        <a href="https://jhang2020.github.io/Projects/PCM3/PCM3.html" class="work-item" target="_blank">
+          <div class="work-info">
+            <h5>Prompted Contrast with Masked Motion Modeling: Towards Versatile 3D Action Representation Learning</h5>
+            <p>Self-Supervised Skeleton-based Action Representation Learning.</p>
+            <span class="work-venue">ACM MM 2023</span>
+          </div>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+        <a href="https://jhang2020.github.io/Projects/HiCLR/HiCLR.html" class="work-item" target="_blank">
+          <div class="work-info">
+            <h5>Hierarchical Consistent Contrastive Learning for Skeleton-Based Action Recognition with Growing
+              Augmentations</h5>
+            <p>Self-Supervised Skeleton-based Action Recognition.</p>
+            <span class="work-venue">AAAI 2023</span>
+          </div>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+      </div>
+    </div>
+  </div>
 
-      <main id="main-content">
-          <section class="hero">
-                <div class="hero-body">
-                      <div class="container is-max-desktop">
-                            <div class="columns is-centered">
-                                  <div class="column has-text-centered">
-                                        <!-- TODO: Replace with your paper title -->
-                                        <h1 class="title is-1 publication-title">SGAR: Structural Generative
-                                Augmentation for 3D Human Motion Retrieval</h1>
-                                        <div class="is-size-5 publication-authors">
-                                              <!-- TODO: Replace with your paper authors and their personal links -->
-                                              <span class="author-block">
-                                                    <a href="https://jhang2020.github.io/" target="_blank">Jiahang
-                                        Zhang</a>,</span>
-                                                <span class="author-block">
-                                                      <a href="https://langlandslin.github.io/" target="_blank">Lilang
-                                        Lin</a>,</span>
-                                                  <span class="author-block">
-                                                        <a href="https://williamyang1991.github.io/"
-                                        target="_blank">Shuai Yang</a>,</span>
-                                                    <span class="author-block">
-                                                          <a href="http://39.96.165.147/people/liujiaying.html"
-                                        target="_blank">Jiaying Liu</a>
-                                                      </span>
-                                                  </div>
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container is-max-desktop has-text-centered">
+          <h1 class="title is-1 publication-title">
+            SGAR: Structural Generative Augmentation for 3D Human Motion Retrieval
+          </h1>
+          <div class="publication-authors">
+            <a href="https://jhang2020.github.io/" target="_blank">Jiahang Zhang</a>,
+            <a href="https://langlandslin.github.io/" target="_blank">Lilang Lin</a>,
+            <a href="https://williamyang1991.github.io/" target="_blank">Shuai Yang</a>,
+            <a href="http://39.96.165.147/people/liujiaying.html" target="_blank">Jiaying Liu</a>
+          </div>
+          <p class="is-size-5 publication-affiliation">
+            Peking University, Wangxuan Institute of Computer Technology<br>
+            NeurIPS 2025
+          </p>
 
-                                              <div class="is-size-5 publication-authors">
-                                                   
-                                <!-- TODO: Replace with your institution and conference/journal info -->
-                                                    <span class="author-block">Peking University, Wangxuan Institute of
-                                    Computer Technology<br>NeurIPS 2025</span>
-                                                    <!-- TODO: Remove this line if no equal contribution -->
-                                                  </div>
+          <div class="publication-links mt-4">
+            <a href="coming_soon.pdf" target="_blank" class="button is-dark is-rounded mx-2">
+              <span class="icon"><i class="fas fa-file-pdf"></i></span>
+              <span>Paper</span>
+            </a>
+            <a href="https://github.com/username/sgar" target="_blank" class="button is-dark is-rounded mx-2">
+              <span class="icon"><i class="fab fa-github"></i></span>
+              <span>Code</span>
+            </a>
+            <a href="https://arxiv.org/abs/xxxx.xxxxx" target="_blank" class="button is-dark is-rounded mx-2">
+              <span class="icon"><i class="ai ai-arxiv"></i></span>
+              <span>arXiv</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-                                              <div class="column has-text-centered">
-                                                    <div class="publication-links">
-                                                             <!-- TODO: Update with your arXiv paper ID -->
-                                                          <span class="link-block">
-                                                                <a href="comming soon" target="_blank"                  
-                                                  class="external-link button is-normal is-rounded is-dark">
-                                                                    <span class="icon">
-                                                                          <i class="fas fa-file-pdf"></i>
-                                                                        </span>
-                                                                    <span>Paper</span>
-                                                                  </a>
-                                                            </span>
+    <!-- Abstract -->
+    <section class="section is-light">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            In this paper, we study an explicit fine-grained concept decomposition for alignment learning and
+            present a novel framework, Structural Generative Augmentation for 3D Human Motion Retrieval (SGAR), to
+            enable
+            generation-augmented retrieval. Extensive experiments on three benchmarks, including motion-text retrieval
+            as well as recognition and generation
+            applications, demonstrate the superior performance and promising transferability.
+          </p>
+        </div>
+      </div>
+    </section>
 
-                                                      <!-- TODO: Replace with your GitHub repository URL -->
-                                                      <span class="link-block">
-                                                            <a href="comming soon" target="_blank"                    
-                                            class="external-link button is-normal is-rounded is-dark">
-                                                                <span class="icon">
-                                                                      <i class="fab fa-github"></i>
-                                                                    </span>
-                                                                <span>Code</span>
-                                                              </a>
-                                                        </span>
+    <!-- Method -->
+    <section class="section is-light">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered">Method</h2>
+        <div class="content has-text-justified">
+            <img src="static/images/framework.png" alt="SGAR Framework" loading="lazy">
+          <p>
+            To enable part-based motion alignment, we integrate structural linguistic knowledge from LLMs and
+            propose a part-mixture learning strategy. By decoupling the motion representations of the global
+            body and local parts, our method can facilitate alignment within different structural levels.
+            In addition to independently minimizing the Euclidean distance of embeddings at global and local
+            motion levels, a directional alignment objective is introduced to model the relational knowledge
+            between them. This further alleviates over-fitting and leads to better representation consistency.
+          </p>
+        </div>
+      </div>
+    </section>
 
-                                                    <!-- TODO: Update with your arXiv paper ID -->
-                                                    <span class="link-block">
-                                                          <a href="comming soon" target="_blank"                  
-                                            class="external-link button is-normal is-rounded is-dark">
-                                                              <span class="icon">
-                                                                    <i class="ai ai-arxiv"></i>
-                                                                  </span>
-                                                              <span>arXiv</span>
-                                                            </a>
-                                                      </span>
-                                                </div>
-                                          </div>
-                                    </div>
-                              </div>
-                        </div>
-                  </div>
-        </section>
+<!-- Image carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item">
+          <!-- TODO: Replace with your research result images -->
+          <img src="static/images/carousel1.jpg" alt="First research result visualization" loading="lazy" />
+          <!-- TODO: Replace with description of this result -->
+          <h2 class="subtitle has-text-centered">
+            First image description.
+          </h2>
+        </div>
+        <div class="item">
+          <!-- Your image here -->
+          <img src="static/images/carousel2.jpg" alt="Second research result visualization" loading="lazy" />
+          <h2 class="subtitle has-text-centered">
+            Second image description.
+          </h2>
+        </div>
+        <div class="item">
+          <!-- Your image here -->
+          <img src="static/images/carousel3.jpg" alt="Third research result visualization" loading="lazy" />
+          <h2 class="subtitle has-text-centered">
+            Third image description.
+          </h2>
+        </div>
+        <div class="item">
+          <!-- Your image here -->
+          <img src="static/images/carousel4.jpg" alt="Fourth research result visualization" loading="lazy" />
+          <h2 class="subtitle has-text-centered">
+            Fourth image description.
+          </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End image carousel -->
 
-        <!-- Paper abstract -->
-        <section class="section hero is-light">
-              <div class="container is-max-desktop">
-                    <div class="columns is-centered has-text-centered">
-                          <div class="column is-four-fifths">
-                                <h2 class="title is-3">Abstract</h2>
-                                <div class="content has-text-justified">
-                                      <!-- TODO: Replace with your paper abstract -->
-                                      <p>
-                                            In this paper, we study an explicit fine-grained concept decomposition for
-                                alignment learning and
-                                            present a novel framework, Structural Generative Augmentation for 3D Human
-                                Motion Retrieval (SGAR), to enable
-                                            generation-augmented retrieval. Extensive experiments on three benchmarks,
-                                including motion-text retrieval as well as recognition and generation
-                                            applications, demonstrate the superior performance and promising
-                                transferability.
-                                          </p>
-                                    </div>
-                              </div>
-                        </div>
-                  </div>
-        </section>
-        <!-- End paper abstract -->
+    <!-- Video -->
+    <section class="hero is-small is-light">
+      <div class="hero-body">
+        <div class="container">
+          <h2 class="title is-3">Video Presentation</h2>
+          <p>To be uploaded.</p>
+        </div>
+      </div>
+    </section>
 
-        <!-- Paper method -->
-        <section class="section hero is-light">
-              <div class="container is-max-desktop">
-                    <div class="columns is-centered has-text-centered">
-                          <div class="column is-four-fifths">
-                                <h2 class="title is-3">Method</h2>
-                                <div class="content has-text-justified">
-                                      <!-- TODO: Replace with your paper abstract -->
-                                      <img src="static/images/framework.png" alt="First research result visualization"
-                                loading="lazy" />
-                                      <p>
-                                            To enable part-based motion alignment, we integrate structural linguistic
-                                knowledge from LLMs and
-                                            propose a part-mixture learning strategy. By decoupling the motion
-                                representations of the global
-                                            body and local parts, our method can facilitate alignment within different
-                                structural levels.
-                                            In addition to independently minimizing the Euclidean distance of embeddings
-                                at global and local
-                                            motion levels, a directional alignment objective is introduced to model the
-                                relational knowledge
-                                            between them. This further alleviates over-fitting and leads to better
-                                representation consistency.
-                                          </p>
-                                    </div>
-                              </div>
-                        </div>
-                  </div>
-        </section>
-        <!-- End paper method -->
-
-        <!-- Image carousel -->
-        <section class="hero is-small">
-              <div class="hero-body">
-                    <div class="container">
-                          <div id="results-carousel" class="carousel results-carousel">
-                               <div class="item">
-                                    <!-- TODO: Replace with your research result images -->
-                                    <img src="static/images/carousel1.jpg" alt="First research result visualization"
-                                loading="lazy" />
-                                    <!-- TODO: Replace with description of this result -->
-                                    <h2 class="subtitle has-text-centered">
-                                          First image description.
-                                        </h2>
-                                  </div>
-                              <div class="item">
-                                    <!-- Your image here -->
-                                    <img src="static/images/carousel2.jpg" alt="Second research result visualization"
-                                loading="lazy" />
-                                    <h2 class="subtitle has-text-centered">
-                                          Second image description.
-                                        </h2>
-                                  </div>
-                              <div class="item">
-                                    <!-- Your image here -->
-                                    <img src="static/images/carousel3.jpg" alt="Third research result visualization"
-                                loading="lazy" />
-                                    <h2 class="subtitle has-text-centered">
-                                         Third image description.
-                                       </h2>
-                                 </div>
-                             <div class="item">
-                                  <!-- Your image here -->
-                                  <img src="static/images/carousel4.jpg" alt="Fourth research result visualization"
-                                loading="lazy" />
-                                  <h2 class="subtitle has-text-centered">
-                                        Fourth image description.
-                                      </h2>
-                                </div>
-                          </div>
-                </div>
-            </div>
-        </section>
-        <!-- End image carousel -->
-
-
-
-        <!-- Youtube video -->
-        <section class="hero is-small is-light">
-              <div class="hero-body">
-                    <div class="container">
-                          <!-- Paper video. -->
-                          <h2 class="title is-3">Video Presentation</h2>
-                          To be uploaded.
-                        </div>
-                  </div>
-        </section>
-        <!-- End youtube video -->
-
-        <!--BibTex citation -->
-          <section class="section" id="BibTeX">
-                <div class="container is-max-desktop content">
-                      <div class="bibtex-header">
-                            <h2 class="title">BibTeX</h2>
-                            <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
-                                  <i class="fas fa-copy"></i>
-                                  <span class="copy-text">Copy</span>
-                                </button>
-                          </div>
-                     
-                <pre id="bibtex-code"><code>@inproceedings{zhangsgar2024,
-  title={SGAR: Structural Generative Augmentation for 3D Human Motion Retrieval},
-  author={Jiahang Zhang, Lilang Lin, Shuai Yang, Jiaying Liu},
-  booktitle={NeurIPS},
-  year={2025},
+    <!-- BibTeX -->
+    <section class="section" id="BibTeX">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3">BibTeX</h2>
+        <div class="bibtex-header">
+          <button class="button is-small is-dark" onclick="copyBibTeX()" title="Copy to clipboard">
+            <i class="fas fa-copy"></i>
+            <span class="ml-1">Copy</span>
+          </button>
+        </div>
+        <pre id="bibtex-code"><code>@inproceedings{zhangsgar2024,
+  title={SGAR: Structural Generative Augmentation for 3D Human Motion Retrieval},
+  author={Zhang, Jiahang and Lin, Lilang and Yang, Shuai and Liu, Jiaying},
+  booktitle={NeurIPS},
+  year={2025}
 }</code></pre>
-                   
-            </div>
-        </section>
-        <!--End BibTex citation -->
+      </div>
+    </section>
+  </main>
 
-          <footer class="footer">
-              <div class="container">
-                    <div class="columns is-centered">
-                          <div class="column is-8">
-                                <div class="content">
+  <footer class="footer">
+    <div class="container">
+      <div class="has-text-centered">
+        <p>
+          More Projects in <a href="http://39.96.165.147/struct.html" target="_blank">STRUCT Group</a>.
+        </p>
+        <p>
+          This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template"
+            target="_blank">Academic Project Page Template</a>, inspired by <a href="https://nerfies.github.io"
+            target="_blank">Nerfies</a>.
+        </p>
+      </div>
+    </div>
+  </footer>
 
-                                      <p>
-                                            More Projects in <a href="http://39.96.165.147/struct.html"
-                                    target="_blank">STRUCT Group</a>.
-                                          </p>
-                                      <p>
-                                            This page was built using the <a
-                                    href="https://github.com/eliahuhorwitz/Academic-project-page-template"              
-                                    target="_blank">Academic Project Page Template</a> which was adopted from the <a
-                                    href="https://nerfies.github.io"               target="_blank">Nerfies</a> project
-                                page.
-                                          </p>
-
-                                    </div>
-                              </div>
-                        </div>
-                  </div>
-        </footer>
-
-        <!-- Statcounter tracking code -->
-         
-        <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
-
-            <!-- End of Statcounter Code -->
-
-          </body>
- 
+</body>
 
 </html>
