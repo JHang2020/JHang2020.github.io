@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="title" content="Towards Reconfigurable Visual Feature Compression - Zhang et al.">
+  <meta name="description" content="RFC introduces reconfigurable multi-task feature compression for flexible and efficient vision foundation model deployment in frontend-cloud collaboration.">
+  <meta name="keywords" content="reconfigurable feature compression, feature coding, vision foundation models, multi-task learning, frontend-cloud collaboration, ECCV 2026, RFC">
+  <meta name="author" content="Jiahang Zhang, Wenhan Yang, Minghao Liu, Jiaying Liu">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Wangxuan Institute of Computer Technology, Peking University">
+  <meta property="og:title" content="Towards Reconfigurable Visual Feature Compression">
+  <meta property="og:description" content="A unified factorization-consolidation-recomposition framework for compact, adaptive feature bitstreams under arbitrary multi-task requests.">
+  <meta property="og:url" content="https://jhang2020.github.io/Projects/RFC/">
+  <meta property="og:image" content="static/images/teaser.png">
+  <meta property="og:image:alt" content="Towards Reconfigurable Visual Feature Compression - Research Preview">
+  <meta property="article:published_time" content="2026-01-01T00:00:00.000Z">
+  <meta property="article:author" content="Jiahang Zhang">
+  <meta property="article:section" content="Research">
+  <meta property="article:tag" content="Feature Compression">
+  <meta property="article:tag" content="Vision Foundation Models">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Towards Reconfigurable Visual Feature Compression">
+  <meta name="twitter:description" content="Reconfigurable multi-task feature compression for flexible and efficient VFM deployment.">
+  <meta name="twitter:image" content="static/images/teaser.png">
+  <meta name="twitter:image:alt" content="Towards Reconfigurable Visual Feature Compression - Research Preview">
+
+  <meta name="citation_title" content="Towards Reconfigurable Visual Feature Compression">
+  <meta name="citation_author" content="Zhang, Jiahang">
+  <meta name="citation_author" content="Yang, Wenhan">
+  <meta name="citation_author" content="Liu, Minghao">
+  <meta name="citation_author" content="Liu, Jiaying">
+  <meta name="citation_publication_date" content="2026">
+  <meta name="citation_conference_title" content="European Conference on Computer Vision">
+  <meta name="citation_pdf_url" content="ECCV_CamearReady_v1.pdf">
+
+  <meta name="theme-color" content="#2563eb">
+  <meta name="msapplication-TileColor" content="#2563eb">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://ajax.googleapis.com">
+  <link rel="preconnect" href="https://documentcloud.adobe.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+  <title>Towards Reconfigurable Visual Feature Compression | ECCV 2026</title>
+
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link rel="apple-touch-icon" href="static/images/favicon.ico">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+  <noscript>
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  </noscript>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script defer src="static/js/bulma-carousel.min.js"></script>
+  <script defer src="static/js/bulma-slider.min.js"></script>
+  <script defer src="static/js/index.js"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "Towards Reconfigurable Visual Feature Compression",
+    "description": "RFC introduces reconfigurable multi-task feature compression for flexible and efficient vision foundation model deployment in frontend-cloud collaboration.",
+    "author": [
+      {"@type": "Person", "name": "Jiahang Zhang", "affiliation": {"@type": "Organization", "name": "Peking University"}},
+      {"@type": "Person", "name": "Wenhan Yang", "affiliation": {"@type": "Organization", "name": "Pengcheng Laboratory"}},
+      {"@type": "Person", "name": "Minghao Liu", "affiliation": {"@type": "Organization", "name": "Peking University"}},
+      {"@type": "Person", "name": "Jiaying Liu", "affiliation": {"@type": "Organization", "name": "Peking University"}}
+    ],
+    "datePublished": "2026-01-01",
+    "publisher": {"@type": "Organization", "name": "European Conference on Computer Vision"},
+    "url": "https://jhang2020.github.io/Projects/RFC/",
+    "image": "static/images/teaser.png",
+    "keywords": ["feature compression", "vision foundation models", "multi-task learning", "frontend-cloud collaboration", "ECCV 2026"],
+    "abstract": "We propose reconfigurable multi-task feature compression and a unified Reconfigurable Feature Compression framework by feature factorization, cross-task consolidation, and task-attentive recomposition.",
+    "isAccessibleForFree": true
+  }
+  </script>
+</head>
+<body>
+  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <div class="more-works-container">
+    <button class="more-works-btn" onclick="toggleMoreWorks()" title="View More Works from Our Lab">
+      <i class="fas fa-flask"></i>
+      More Works
+      <i class="fas fa-chevron-down dropdown-arrow"></i>
+    </button>
+    <div class="more-works-dropdown" id="moreWorksDropdown">
+      <div class="dropdown-header">
+        <h4>More Works</h4>
+        <button class="close-btn" onclick="toggleMoreWorks()">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="works-list">
+        <a href="https://jhang2020.github.io/Projects/SGAR/SGAR.html" class="work-item" target="_blank">
+          <div class="work-info">
+            <h5>SGAR: Structural Generative Augmentation for 3D Human Motion Retrieval</h5>
+            <p>Cross-Modal Motion-Text Representation Learning.</p>
+            <span class="work-venue">NeurIPS 2025</span>
+          </div>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+        <a href="https://jhang2020.github.io/Projects/Shap-Mix/Shap-Mix.html" class="work-item" target="_blank">
+          <div class="work-info">
+            <h5>Shap-Mix: Shapley Value Guided Mixing for Long-Tailed Skeleton Based Action Recognition</h5>
+            <p>Long-Tailed Skeleton-based Action Recognition.</p>
+            <span class="work-venue">IJCAI 2024</span>
+          </div>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+        <a href="https://jhang2020.github.io/Projects/PCM3/PCM3.html" class="work-item" target="_blank">
+          <div class="work-info">
+            <h5>Prompted Contrast with Masked Motion Modeling: Towards Versatile 3D Action Representation Learning</h5>
+            <p>Self-Supervised Skeleton-based Action Representation Learning.</p>
+            <span class="work-venue">ACM MM 2023</span>
+          </div>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+        <a href="https://jhang2020.github.io/Projects/HiCLR/HiCLR.html" class="work-item" target="_blank">
+          <div class="work-info">
+            <h5>Hierarchical Consistent Contrastive Learning for Skeleton-Based Action Recognition with Growing Augmentations</h5>
+            <p>Self-Supervised Skeleton-based Action Recognition.</p>
+            <span class="work-venue">AAAI 2023</span>
+          </div>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <main id="main-content">
+    <section class="hero publication-header">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <h1 class="title is-1 publication-title">Towards Reconfigurable Visual Feature Compression</h1>
+
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">Jiahang Zhang<sup>1</sup>,</span>
+                <span class="author-block">Wenhan Yang<sup>2</sup>,</span>
+                <span class="author-block">Minghao Liu<sup>1</sup>,</span>
+                <span class="author-block">Jiaying Liu<sup>1</sup></span>
+              </div>
+
+              <div class="is-size-5 publication-authors">
+                <span class="author-block"><sup>1</sup>Wangxuan Institute of Computer Technology, Peking University</span><br>
+                <span class="author-block"><sup>2</sup>Pengcheng Laboratory</span><br>
+                <span class="publication-venue">ECCV 2026</span>
+              </div>
+
+              <div class="column has-text-centered">
+                <div class="publication-links">
+                  <span class="link-block">
+                    <a href="#" class="external-link button is-normal is-rounded is-dark disabled-link" aria-disabled="true">
+                      <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                      <span>Paper Coming Soon</span>
+                    </a>
+                  </span>
+                  <span class="link-block">
+                    <a href="#" class="external-link button is-normal is-rounded is-dark disabled-link" aria-disabled="true">
+                      <span class="icon"><i class="fab fa-github"></i></span>
+                      <span>Code Coming Soon</span>
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hero teaser">
+      <div class="container is-max-desktop">
+        <div class="hero-body">
+          <figure class="project-figure teaser-figure">
+            <img src="static/images/teaser.png" alt="Overview of Reconfigurable Feature Compression" loading="eager">
+          </figure>
+          <h2 class="subtitle has-text-centered">
+            RFC targets reconfigurable multi-task feature compression: it factorizes VFM features into task-specific components, consolidates shared cross-task information, and recomposes compact features for once-forward cloud inference.
+          </h2>
+        </div>
+      </div>
+    </section>
+
+    <section class="section hero is-light">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Abstract</h2>
+            <div class="content has-text-justified">
+              <p>
+                Recently, vision foundation models (VFMs) have demonstrated strong power for versatile downstream task analysis. This paper starts from the problem of how to efficiently deploy VFMs at the cloud to support various user requests with arbitrary multi-task combinations that end in any scalable fashion. To achieve feature data transmission between frontend-cloud, traditional feature coding employs the direct compression-reconstruction paradigm. However, this can result in potential redundancy: task-irrelevant information and repeated coding of cross-task shared knowledge, leading to an inflexible and redundant scheme.
+              </p>
+              <p>
+                To this end, we propose a novel feature coding paradigm, termed <strong>reconfigurable multi-task feature compression</strong>, which aims to efficiently and adaptively compress the intermediate features to support the requested targeted tasks. Correspondingly, we propose a unified <strong>Reconfigurable Feature Compression</strong> framework, <strong>RFC</strong>, by feature factorization and recomposition. Specifically, the original feature is first factorized into multiple task-specific features with light-weight adapters. Then, to efficiently compress these separate features, we consolidate them in a task-conditional auto-regressive manner, leveraging previously encoded task features as hyperprior conditions to reduce the redundancy of shared information in the current task feature. At the cloud side, a task-attentive recomposition module is further developed to fulfill the multi-task inference power within a single forward pass. Finally, we construct a comprehensive benchmark of reconfigurable feature compression to verify the effectiveness of RFC.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered">Method</h2>
+        <div class="columns is-centered">
+          <div class="column is-four-fifths">
+            <div class="content has-text-justified">
+              <p>
+                RFC follows a unified <strong>factorization-consolidation-recomposition</strong> pipeline for arbitrary target task subsets. The front end uses task-specific adapters to remove task-irrelevant information, the entropy model consolidates cross-task shared knowledge with auto-regressive hyperprior conditioning, and the cloud side recomposes selected task features with task-attentive fusion.
+              </p>
+            </div>
+            <div class="method-steps columns is-variable is-4">
+              <div class="column">
+                <div class="method-card">
+                  <h3>1. Factorization</h3>
+                  <p>Adapter-based information bottlenecks obtain atomic task-specific feature components.</p>
+                </div>
+              </div>
+              <div class="column">
+                <div class="method-card">
+                  <h3>2. Consolidation</h3>
+                  <p>Task auto-regressive hyperprior coding reduces shared redundancy among requested tasks.</p>
+                </div>
+              </div>
+              <div class="column">
+                <div class="method-card">
+                  <h3>3. Recomposition</h3>
+                  <p>Task-attentive fusion recomposes selected features for single-forward multi-task inference.</p>
+                </div>
+              </div>
+            </div>
+            <figure class="project-figure">
+              <img src="static/images/framework.png" alt="RFC framework overview" loading="lazy">
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered">Quantitative Results</h2>
+        <div class="content has-text-justified">
+          <p>
+            RFC is evaluated with comprehensive overall and simulated protocols.
+          </p>
+          <p>
+            (1) Compared to traditional non-configurable methods, RFC can organize the bit-stream on-demand.
+            (2) In addition to the strong and flexible adaptation capacity, RFC can still perform well when requesting all tasks.
+            (3) Compared with another naive reconfigurable method (Multiple ST FC), RFC retains the native efficiency of VFMs, i.e., single forward for inference of multiple tasks.
+            (4) For more practical simulation protocol, RFC demonstrates significant advantages over other methods.
+          </p>
+        </div>
+        <figure class="project-figure table-figure">
+          <img src="static/images/main_res1.png" alt="Main quantitative comparison table part 1" loading="lazy">
+        </figure>
+        <figure class="project-figure table-figure">
+          <img src="static/images/main_res2.png" alt="Main quantitative comparison table part 2" loading="lazy">
+        </figure>
+        <div class="content has-text-justified">
+          <p>
+            <strong>Key ablation studies on our designs.</strong>
+          </p>
+        </div>
+        <figure class="project-figure table-figure">
+          <img src="static/images/ablation_res.png" alt="Ablation study table" loading="lazy">
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" id="BibTeX">
+      <div class="container is-max-desktop content">
+        <div class="bibtex-header">
+          <h2 class="title">BibTeX</h2>
+          <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
+            <i class="fas fa-copy"></i>
+            <span class="copy-text">Copy</span>
+          </button>
+        </div>
+        <pre id="bibtex-code"><code>@inproceedings{zhang2026towards,
+  title     = {Towards Reconfigurable Visual Feature Compression},
+  author    = {Zhang, Jiahang and Yang, Wenhan and Liu, Minghao and Liu, Jiaying},
+  booktitle = {European Conference on Computer Vision (ECCV)},
+  year      = {2026}
+}</code></pre>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank" rel="noopener">Academic Project Page Template</a>, adopted from the <a href="https://nerfies.github.io" target="_blank" rel="noopener">Nerfies</a> project page.
+              arXiv and code links are intentionally marked as coming soon.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
