@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Iris pairs sparse RGB frames with high-frequency human pose priors through spatiotemporal binding for fine-grained video understanding.">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:title" content="Iris: Empowering Video MLLMs with High-Frequency Pose Priors via Spatiotemporal Binding">
+  <meta property="og:description" content="Sparse video. Dense motion cues. A pose-augmented video MLLM for fine-grained motion understanding and repetition counting.">
+  <meta property="og:type" content="website">
+  <title>Iris | High-Frequency Pose Priors for Video MLLMs</title>
+  <link rel="icon" href="assets/favicon.png" type="image/png">
+  <link rel="canonical" href="https://jhang2020.github.io/Projects/Iris/">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="wordmark" href="#top" aria-label="Iris home"><img src="assets/iris-logo.png" width="36" height="27" alt=""> Iris</a>
+      <div class="nav-links"><a href="#overview">Overview</a><a href="#method">Method</a><a href="#results">Results</a><a href="#citation">BibTeX</a></div>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="hero container" id="top" aria-labelledby="paper-title">
+      <p class="venue">NeurIPS 2026</p>
+      <h1 id="paper-title"><span class="iris-title"><img class="title-logo" src="assets/iris-logo.png" width="58" height="44" alt="">Iris:</span> Empowering Video MLLMs with High-Frequency Pose Priors via Spatiotemporal Binding</h1>
+      <div class="authors" aria-label="Authors">
+        <span>Jiahang Zhang<sup>1,†</sup></span><span>Yushuo Guan<sup>2</sup></span><span>Yuanxing Zhang<sup>2</sup></span><span>Pengfei Wan<sup>2</sup></span><span>Jiaying Liu<sup>1,*</sup></span>
+      </div>
+      <div class="affiliations"><p><sup>1</sup> Wangxuan Institute of Computer Technology, Peking University</p><p><sup>2</sup> KlingAI Research</p></div>
+      <p class="author-notes">* Corresponding author. <span>† This work was conducted during the author's internship at KlingAI.</span></p>
+      <div class="resources" aria-label="Paper resources">
+        <a class="resource primary" href="coming-soon.html?resource=paper"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l4 4v14H7zM14 3v5h4M10 12h5M10 16h5"/></svg>Paper <span class="status">Coming soon</span></a>
+        <a class="resource" href="coming-soon.html?resource=code"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-13-2 16"/></svg>Code <span class="status">Coming soon</span></a>
+        <a class="resource" href="coming-soon.html?resource=models"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5 9-5ZM3 12l9 5 9-5M3 16l9 5 9-5"/></svg>Models <span class="status">Coming soon</span></a>
+      </div>
+      <aside class="tldr" aria-label="Paper in two sentences">
+        <p class="tldr-label">TL;DR</p>
+        <p>Iris pairs <strong>sparse RGB frames with dense human pose sequences</strong> and binds them in time and space. These compact motion cues improve fine-grained action understanding and repetition counting with little additional MLLM inference cost.</p>
+      </aside>
+    </section>
+
+    <section class="container overview" id="overview" aria-labelledby="overview-title">
+      <h2 class="sr-only" id="overview-title">Overview</h2>
+      <figure>
+        <button class="figure-button" data-figure="assets/teaser.png" data-title="Iris compared with existing video and pose-augmented MLLMs" aria-label="Enlarge the overview figure"><img src="assets/teaser.png" alt="Comparison of vision-only and earlier pose-augmented MLLMs with Iris, which combines diverse video-pose-text data with explicit spatiotemporal binding." width="2400" fetchpriority="high"></button>
+        <figcaption><strong>Structured motion cues for video understanding.</strong> Iris combines sparse visual context with a lightweight, high-frequency pose stream and learns explicit correspondence between the two modalities.</figcaption>
+      </figure>
+    </section>
+
+    <section class="section abstract-section" aria-labelledby="abstract-title">
+      <div class="reading-width">
+        <h2 id="abstract-title">Abstract</h2>
+        <p>Multimodal Large Language Models (MLLMs) have demonstrated remarkable effectiveness in general video understanding. Human motion understanding remains a bottleneck due to the lack of explicit structural cues in visual patches and the motion information lost through sparse temporal sampling. We introduce <strong>Iris</strong> (<strong>I</strong>ntegrating <strong>r</strong>epresentations of <strong>i</strong>n-the-wild <strong>s</strong>keletons), a pose-augmented video MLLM for human-centric motion understanding. Iris pairs a sparse vision stream with a lightweight, high-frequency human pose stream to provide spatially structured and temporally dense kinematic signals. A cross-modal spatiotemporal binding mechanism uses pose-structured 3D RoPE for temporal alignment and person-grounded cross-attention for spatial visual grounding. An automated pose curation pipeline supports large-scale training with a heterogeneous pose representation. Experiments demonstrate improved performance on fine-grained motion understanding and repetitive action counting, while preserving general video understanding with efficient token computation.</p>
+      </div>
+    </section>
+
+    <section class="section container" id="method" aria-labelledby="method-title">
+      <div class="section-heading"><p class="eyebrow">Method</p><h2 id="method-title">Sparse visual context, dense motion priors</h2><p>16 RGB frames provide visual context; 160 pose frames preserve fine-grained motion.</p></div>
+      <figure>
+        <button class="figure-button" data-figure="assets/pipeline.png" data-title="The Iris architecture" aria-label="Enlarge the architecture figure"><img src="assets/pipeline.png" alt="Iris architecture: sparse visual and dense pose encoders, part-aware pose tokens, person-grounded cross-attention, and shared temporal positions in 3D RoPE before the language model." width="2400" loading="lazy"></button>
+        <figcaption><strong>The Iris architecture.</strong> Dense poses are encoded into compact, part-aware tokens. Spatial grounding and shared temporal positions connect them to the visual stream.</figcaption>
+      </figure>
+      <ol class="method-steps">
+        <li><h3>Encode dense poses compactly</h3><p>A heterogeneous descriptor combines 2D coordinates, local 3D articulation, pelvis translation, and visibility. A pose encoder produces five semantic body-part tokens per person and effective visual time step.</p></li>
+        <li><h3>Bind pose and vision in time and space</h3><p>Parallel 3D RoPE gives corresponding pose and visual tokens shared temporal indices. Person-grounded cross-attention connects part-aware pose queries to the corresponding person's visual region.</p></li>
+        <li><h3>Train progressively</h3><p>Pose–text contrastive pretraining initializes the motion encoder. Proxy tasks establish visual correspondence, followed by supervised fine-tuning with pose-paired and RGB-only examples.</p></li>
+      </ol>
+    </section>
+
+    <section class="section results-section" id="results" aria-labelledby="results-title">
+      <div class="container">
+        <div class="section-heading"><p class="eyebrow">Results</p><h2 id="results-title">Motion, counting, and general video understanding</h2><p>Explore both Iris backbones across five benchmarks. All results are reported in the paper.</p></div>
+        <div class="result-tabs" role="tablist" aria-label="Evaluation task">
+          <button type="button" role="tab" id="tab-motion" aria-controls="panel-motion" aria-selected="true" tabindex="0">Motion understanding</button>
+          <button type="button" role="tab" id="tab-counting" aria-controls="panel-counting" aria-selected="false" tabindex="-1">Repetition counting</button>
+          <button type="button" role="tab" id="tab-general" aria-controls="panel-general" aria-selected="false" tabindex="-1">General video</button>
+        </div>
+        <div class="result-panel" role="tabpanel" id="panel-motion" aria-labelledby="tab-motion" tabindex="0">
+          <h3>Fine-grained motion understanding</h3>
+          <p class="panel-intro">Iris improves MotionBench and FAVOR Bench on both backbones, using 16 RGB frames with an additional 160-frame pose sequence.</p>
+          <div class="table-scroll" tabindex="0" role="region" aria-label="Motion understanding results, scroll horizontally on small screens">
+            <table><caption class="sr-only">MotionBench and FAVOR Bench overall accuracy</caption><thead><tr><th scope="col">Model</th><th scope="col">RGB frames</th><th scope="col">MotionBench ↑</th><th scope="col">FAVOR Bench ↑</th></tr></thead><tbody>
+              <tr><th scope="row">Qwen2.5-VL-7B</th><td>16</td><td>56.2</td><td>47.8</td></tr>
+              <tr><th scope="row">Qwen3-VL-8B</th><td>16</td><td>57.1</td><td>51.1</td></tr>
+              <tr><th scope="row">MiMoVL-SFT-7B</th><td>16</td><td>55.6</td><td>48.2</td></tr>
+              <tr><th scope="row">InternVL3.5-8B</th><td>16</td><td>56.5</td><td>51.3</td></tr>
+              <tr><th scope="row">TE-Fusion-9B</th><td>16</td><td>58.0</td><td>—</td></tr>
+              <tr><th scope="row">MotionChat-7B</th><td>16</td><td>54.8</td><td>45.7</td></tr>
+              <tr><th scope="row">MotionLLM-7B</th><td>8</td><td>32.4</td><td>38.8</td></tr>
+              <tr class="ours"><th scope="row">Iris-7B <span class="ours-label">Ours</span></th><td>16 + pose</td><td>60.5</td><td>54.1</td></tr>
+              <tr class="ours"><th scope="row">Iris-8B <span class="ours-label">Ours</span></th><td>16 + pose</td><td><strong>62.3</strong></td><td><strong>57.8</strong></td></tr>
+            </tbody></table>
+          </div>
+          <p class="table-note">Accuracy (%), higher is better. Iris-7B uses Qwen2.5-VL-7B; Iris-8B uses Qwen3-VL-8B. Selected comparisons from the paper; — indicates an unreported result.</p>
+          <details class="category-results"><summary>MotionBench category breakdown<span class="disclosure-icon" aria-hidden="true">+</span></summary>
+            <div class="table-scroll" tabindex="0" role="region" aria-label="MotionBench category results, scroll horizontally on small screens">
+              <table><caption class="sr-only">MotionBench accuracy by category</caption><thead><tr><th scope="col">Model</th><th scope="col">MR</th><th scope="col">LM</th><th scope="col">CM</th><th scope="col">MO</th><th scope="col">AO</th><th scope="col">RC</th></tr></thead><tbody>
+                <tr><th scope="row">Qwen2.5-VL-7B</th><td>61.5</td><td>60.1</td><td>45.7</td><td>73.2</td><td>41.8</td><td>29.8</td></tr>
+                <tr class="ours"><th scope="row">Iris-7B</th><td>63.9</td><td>63.4</td><td>63.6</td><td>74.6</td><td>43.2</td><td>38.5</td></tr>
+                <tr><th scope="row">Qwen3-VL-8B</th><td>62.0</td><td>60.3</td><td>57.4</td><td>73.2</td><td>42.0</td><td>25.5</td></tr>
+                <tr class="ours"><th scope="row">Iris-8B</th><td>66.4</td><td>64.5</td><td>67.0</td><td>74.9</td><td>47.0</td><td>37.5</td></tr>
+              </tbody></table>
+            </div>
+            <p class="table-note">Original MotionBench categories: MR, LM, CM, MO, AO, and RC. Values are accuracy (%).</p>
+          </details>
+        </div>
+        <div class="result-panel" role="tabpanel" id="panel-counting" aria-labelledby="tab-counting" tabindex="0" hidden>
+          <h3>Repetitive action counting</h3>
+          <p class="panel-intro">High-frequency pose inputs help preserve the periodicity of human motion on RepCount and UCFRep.</p>
+          <div class="table-scroll" tabindex="0" role="region" aria-label="Counting results, scroll horizontally on small screens">
+            <table><caption class="sr-only">RepCount and UCFRep repetition counting results</caption><thead><tr><th scope="col" rowspan="2">Model</th><th scope="colgroup" colspan="2">RepCount</th><th scope="colgroup" colspan="2">UCFRep</th></tr><tr><th scope="col">MAE ↓</th><th scope="col">OBO ↑</th><th scope="col">MAE ↓</th><th scope="col">OBO ↑</th></tr></thead><tbody>
+              <tr><th scope="row">Qwen2.5-VL-7B</th><td>1.115</td><td>17.3%</td><td>1.099</td><td>28.2%</td></tr>
+              <tr><th scope="row">Qwen3-VL-8B</th><td>0.664</td><td>20.0%</td><td>0.696</td><td>25.2%</td></tr>
+              <tr><th scope="row">MiMoVL-SFT-7B</th><td>0.751</td><td>22.0%</td><td>0.877</td><td>25.0%</td></tr>
+              <tr><th scope="row">InternVL3.5-8B</th><td>0.928</td><td>13.3%</td><td>1.241</td><td>18.5%</td></tr>
+              <tr><th scope="row">MotionChat-7B</th><td>1.306</td><td>10.1%</td><td>3.544</td><td>17.5%</td></tr>
+              <tr class="ours"><th scope="row">Iris-7B <span class="ours-label">Ours</span></th><td>0.420</td><td>38.0%</td><td>0.466</td><td>43.7%</td></tr>
+              <tr class="ours"><th scope="row">Iris-8B <span class="ours-label">Ours</span></th><td><strong>0.346</strong></td><td><strong>50.0%</strong></td><td><strong>0.344</strong></td><td><strong>62.1%</strong></td></tr>
+            </tbody></table>
+          </div>
+          <p class="table-note">MAE: normalized mean absolute error (lower is better). OBO: off-by-one accuracy, shown as a percentage (higher is better). All models use 16 RGB frames; Iris also receives dense pose inputs.</p>
+        </div>
+        <div class="result-panel" role="tabpanel" id="panel-general" aria-labelledby="tab-general" tabindex="0" hidden>
+          <h3>General video understanding <span class="setting-label">RGB-only inference</span></h3>
+          <p class="panel-intro">On MVBench, Iris is evaluated without pose inputs to assess its general video understanding after pose-integrated training.</p>
+          <div class="table-scroll" tabindex="0" role="region" aria-label="MVBench results, scroll horizontally on small screens">
+            <table><caption class="sr-only">MVBench accuracy without pose input at inference</caption><thead><tr><th scope="col">Model</th><th scope="col">Overall ↑</th><th scope="col">Kinematic &amp; Motion ↑</th><th scope="col">Context &amp; Appearance ↑</th></tr></thead><tbody>
+              <tr><th scope="row">Qwen2.5-VL-7B</th><td>63.3</td><td>62.4</td><td>64.3</td></tr>
+              <tr class="ours"><th scope="row">Iris-7B <span class="ours-label">Ours</span></th><td>66.1</td><td>64.8</td><td>67.4</td></tr>
+              <tr><th scope="row">Qwen3-VL-8B</th><td>64.5</td><td>61.4</td><td>67.6</td></tr>
+              <tr class="ours"><th scope="row">Iris-8B <span class="ours-label">Ours</span></th><td><strong>66.3</strong></td><td><strong>65.2</strong></td><td>67.4</td></tr>
+            </tbody></table>
+          </div>
+          <p class="table-note">Accuracy (%), higher is better. Kinematic &amp; Motion and Context &amp; Appearance are the task groupings used in the paper. Every model in this table uses RGB-only inference.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container" aria-labelledby="examples-title">
+      <div class="section-heading"><p class="eyebrow">Qualitative examples</p><h2 id="examples-title">Reading the details of human motion</h2><p>Examples from the paper illustrate repetition counting and fine-grained action sequencing.</p></div>
+      <figure><button class="figure-button" data-figure="assets/quati_case.png" data-title="Repetition counting and action sequencing examples" aria-label="Enlarge the qualitative examples"><img src="assets/quati_case.png" alt="Paper examples comparing Qwen and Iris on counting pommel-horse swings and identifying a sequence of human actions." width="2400" loading="lazy"></button><figcaption>Dense pose cues complement visual appearance and context when reasoning about rapid repetitions and detailed action sequences.</figcaption></figure>
+    </section>
+
+    <section class="section data-section" aria-labelledby="data-title">
+      <div class="container"><div class="section-heading"><p class="eyebrow">Training data</p><h2 id="data-title">An automated video–pose curation pipeline</h2><p>In-the-wild videos provide diverse human motions, people, and camera viewpoints.</p></div>
+        <figure><button class="figure-button" data-figure="assets/data_pipeline_small.png" data-title="The training-data curation pipeline" aria-label="Enlarge the data pipeline figure"><img src="assets/data_pipeline_small.png" alt="Training-data curation with video analysis, person detection, mask propagation, pose estimation, and quality checking." width="2400" loading="lazy"></button><figcaption><strong>Training-data construction.</strong> Video analysis, tracking, pose estimation, and quality checking organize videos into heterogeneous pose representations. Test-time pose processing is automatic and uses no manual pose refinement.</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="section reading-width citation-section" id="citation" aria-labelledby="citation-title">
+      <div class="citation-heading"><h2 id="citation-title">BibTeX</h2><button class="copy-button" id="copy-citation" type="button">Copy citation</button></div>
+      <pre><code id="bibtex">@inproceedings{zhang2026iris,
+  title     = {Iris: Empowering Video MLLMs with High-Frequency
+               Pose Priors via Spatiotemporal Binding},
+  author    = {Zhang, Jiahang and Guan, Yushuo and Zhang, Yuanxing
+               and Wan, Pengfei and Liu, Jiaying},
+  booktitle = {Advances in Neural Information Processing Systems},
+  year      = {2026}
+}</code></pre>
+      <p class="copy-status" id="copy-status" role="status" aria-live="polite"></p>
+      <a class="text-link" href="assets/iris.bib" download>Download BibTeX ↓</a>
+    </section>
+  </main>
+  <footer><div class="container"><a class="wordmark" href="#top"><img src="assets/iris-logo.png" width="32" height="24" alt=""> Iris</a><p>Peking University · KlingAI Research</p><a href="#top">Back to top ↑</a></div></footer>
+  <dialog class="figure-dialog" id="figure-dialog" aria-labelledby="dialog-title"><div class="dialog-heading"><p id="dialog-title"></p><button id="close-figure" type="button" aria-label="Close enlarged figure">✕</button></div><img id="dialog-image" alt=""></dialog>
+</body>
+</html>
